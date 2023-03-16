@@ -69,6 +69,6 @@ module.exports = {
             type: ApplicationCommandOptionType.String,
         },
     ],
-    permissionsRequired: [PermissionFlagBits.KickMembers],
-    botPermissions: [PermissionFlagBits.KickMembers]
+    permissionsRequired: [PermissionFlagsBits.KickMembers],
+    botPermissions: [PermissionFlagsBits.KickMembers]
 }
