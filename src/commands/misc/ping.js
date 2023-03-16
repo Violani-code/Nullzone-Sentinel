@@ -6,8 +6,8 @@ module.exports = {
         const ping = reply.createdTimestamp - interaction.createdTimestamp;
 
         interaction.editReply(`Client: ${ping}ms | Websocket: ${client.ws.ping}ms`);
-    }
-    
+    },
+
     name: 'ping',
     description: 'Replies with the ping of the bot.',
     deleted: false,
