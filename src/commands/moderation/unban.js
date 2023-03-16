@@ -1,3 +1,5 @@
+const { ApplicationCommandOptionType, PermissionFlagsBits } = require('discord.js');
+
 module.exports = {
     callback: (client, interaction) => {
         const targetUserId = interaction.options.get('target-user').value;
