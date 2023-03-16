@@ -15,6 +15,11 @@ module.exports = {
             description: 'The reason for the ban.',
             type: ApplicationCommandOptionType.String,
         },
+        {
+            name: 'time',
+            description: 'Time for ban',
+            type: ApplicationCommandOptionType.Integer,
+        },
     ],
     permissionsRequired: [PermissionFlagsBits.Administrator],
     botPermissions: [PermissionFlagsBits.Administrator],
