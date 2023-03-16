@@ -42,7 +42,7 @@ module.exports = async (client, interaction) => {
                 }
             }
         }
-        if (commandObject.botPermissions?.lenght) {
+        if (commandObject.botPermissions?.length) {
             for (const permission of commandObject.botPermissions) {
                 const bot = interaction.guild.members.me;
 
