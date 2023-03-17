@@ -26,7 +26,7 @@ module.exports = {
         if(interaction.member.id === interaction.guild.ownerId) {
             try{
                 await targetUser.kick({reason});
-                await interaction.editReply(`User ${targetUser} has been kicked from ${interaction.guild.name}`);
+                await interaction.editReply(`User ${targetUser} has been kicked from **${interaction.guild.name}**`);
             }
             catch(error){
                 console.log(`There was an error (kick.js): ${error}`);
