@@ -1,7 +1,7 @@
 const { ApplicationCommandOptionType, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
-    callback: (client, interaction) => {
+    callback: async (client, interaction) => {
         const targetUserId = interaction.options.get('target-user').value;
 
         await interaction.deferReply();
@@ -17,9 +17,9 @@ module.exports = {
 
         try {
             // console.log(targetUserId);
-            await guild.bans.remove(targetUserId);
+            await interaction.guild.bans.remove(targetUserId);
             await interaction.editReply({
-                content: `User ${targetUser} has been unbanned from **${interaction.guild.name}**`,
+                content: `User <@${targetUserId}> has been unbanned from **${interaction.guild.name}**`,
                 ephemeral: true,
             });
         } catch (error) {
@@ -28,15 +28,18 @@ module.exports = {
     },
 
     name: `unban`,
-    description: `Unbans specified member`
+    description: `Unbans specified member`,
     options: [
         {
             name: `target-user`,
             description: `The user you wish to unban.`,
             required: true,
-            type: ApplicationCommandOptionType.Mentionable
+            type: ApplicationCommandOptionType.Mentionable,
+            choices: [
+
+            ]
         },
-        permissionsRequired: [PermissionFlagsBits.BanMembers],
-        botPermissions: [PermissionFlagsBits.BanMembers],
     ],
+    permissionsRequired: [PermissionFlagsBits.BanMembers],
+    botPermissions: [PermissionFlagsBits.BanMembers],
 }
