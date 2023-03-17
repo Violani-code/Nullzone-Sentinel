@@ -1,4 +1,4 @@
-const { Client, Interaction, ApplicationCommandOptionType, PermissionFlagsBits } = require('discord.js');
+const { ApplicationCommandOptionType, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
     callback: async (client, interaction) => {
